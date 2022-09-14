@@ -120,7 +120,7 @@ header .inner nav ul li a {
 }
 /* .cont01 영상편집 */
 .cont01 {
-    margin-top: 50px;
+    margin-top: 200px;
 }
 .cont01 .motion_menu {
     display: inline-block;
@@ -133,18 +133,21 @@ header .inner nav ul li a {
     background-color: #eee;
     height: 40px;
     border-radius: 40px;
+    line-height: 50px;
 }
 
 .cont01 .motion_menu ul li {
     padding: 0 30px;
     font-size: 14px;
     cursor:context-menu;
+    
 }
+
 .cont01 .motion_menu ul li.on {
     background-color: cornflowerblue;
     color: #fff;
     height: 100%;
-    line-height: 40px;
+    line-height: 45px;
     border-radius: 40px;
 }
 
@@ -222,7 +225,7 @@ header .inner nav ul li a {
 }
 .cont01 .mySwiper .item .info .btn  li{
     height: 40px;
-    line-height: 40px;
+    line-height: 45px;
     border-radius: 40px;
     background-color: dodgerblue;
     color: #fff;
@@ -246,7 +249,7 @@ header .inner nav ul li a {
     margin: 200px auto; */
     background-color: #eee;
     padding: 200PX 0;
-    margin-top: 20px;
+    margin-top: 200px;
 }
 .cont03 .list {
     height: 85vh;
@@ -259,6 +262,7 @@ header .inner nav ul li a {
     position: relative;
     overflow: hidden;
 }
+
 .cont03 .list .item::before {
     content: '';
     width: 100%;
@@ -441,10 +445,11 @@ footer ul {
 
 footer ul li{
     height: 50px;
-    line-height: 50px;
+    line-height: 60px;
     width: 200px;
     background-color: rgb(152, 91, 91);
     margin: 10px auto;
+    border-radius: 40px;
 }
 
 footer ul li a{
