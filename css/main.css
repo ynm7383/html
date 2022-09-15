@@ -133,15 +133,16 @@ header .inner nav ul li a {
     background-color: #eee;
     height: 40px;
     border-radius: 40px;
-    line-height: 50px;
 }
+
 
 .cont01 .motion_menu ul li {
     padding: 0 30px;
     font-size: 14px;
     cursor:context-menu;
-    
+    line-height: 45px;
 }
+    
 
 .cont01 .motion_menu ul li.on {
     background-color: cornflowerblue;
@@ -252,11 +253,15 @@ header .inner nav ul li a {
     margin-top: 200px;
 }
 .cont03 .list {
+    width: 1440px;
+    margin: 0 auto;
     height: 85vh;
     display: flex;
     justify-content: space-between;
 }
+
 .cont03 .list .item {
+    width: 1440px;
     margin: 0 10px;
     height: 100%;
     position: relative;
@@ -327,12 +332,20 @@ header .inner nav ul li a {
     background-color: #eee;
     border-radius: 40px;
 }
+
+.cont03 .list .item .info .btn li:hover {
+    margin-right: 10px;
+    background-color: rgb(202, 168, 168);
+    color: #fff;
+    border-radius: 40px;
+}
+
 .cont03 .list .item .info .btn li a {
     height: 45px;
     padding: 0 40px;
     display: block;
-    line-height: 45px;
-    font-size: 14px;
+    line-height: 50px;
+    font-size: 15px;
 }
 
 /* 그래픽디자인 */
@@ -445,7 +458,7 @@ footer ul {
 
 footer ul li{
     height: 50px;
-    line-height: 60px;
+    
     width: 200px;
     background-color: rgb(152, 91, 91);
     margin: 10px auto;
@@ -454,6 +467,7 @@ footer ul li{
 
 footer ul li a{
     display: block;
+    line-height: 55px;
 }
 
 footer p{
