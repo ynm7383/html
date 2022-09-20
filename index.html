@@ -8,18 +8,23 @@
 
     <!-- css -->
     <!-- 스와이퍼 css -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
 
     <!-- js -->
-    <!-- aos js -->
+    <!-- jquery lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- jquery ui lib -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- jquery lib -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
      <!-- Swiper JS -->
      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
      <script>
       $(function(){
@@ -44,6 +49,35 @@
             $('.mySwiper').eq($(this).index()).addClass('on');
           })
 
+
+          $('.gnb a').click(function(e){
+            e.preventDefault(); //a링크방지
+        });
+
+        //메뉴클릭시 내부페이지 이동
+        $('.inner .gnb ul li').click(function(){
+            var page = $('section').eq($(this).index());
+            var pageTop = page.offset().top;
+            $('html, body').animate({
+                scrollTop : pageTop
+            }, 1000, 'easeOutQuint')
+        })
+
+        var hdTop = $('header').offset().top;
+            $(window).scroll(function(){
+                console.log(hdTop);
+                //화면을 스크롤 했을 때 이벤트 실행에 대한 코드
+                var windowTop = $(window).scrollTop();
+                console.log(windowTop);
+                if(hdTop < windowTop) {
+                    //header보다 스크롤바의 값이 더 클때 실행
+                    $('header').addClass('on');
+                } else {
+                    $('header').removeClass('on');
+                }
+            });
+
+
       });//jquery end
   </script>
 
@@ -54,24 +88,25 @@
           <h1>
               <a href="#">yunhyeonji</a>
           </h1>
-          <nav>
+          <nav class="gnb">
               <ul>
-                  <li><a href="#">영상편집</a></li>
-                  <li><a href="#">웹디자인/웹퍼블리싱</a></li>
-                  <li><a href="#">2D디자인</a></li>
-                  <li><a href="#">나의소개</a></li>
+                  <li><a href="#c1">영상편집</a></li>
+                  <li><a href="#c2">웹디자인/웹퍼블리싱</a></li>
+                  <li><a href="#c3">2D디자인</a></li>
+                  <li><a href="#c4">나의소개</a></li>
               </ul>
           </nav>
       </div><!-- .inner end -->
   </header>
-  <section class="main_visual">
+
+  <div class="main_visual" >
       <div class="inner">
           <p>motion graphic desinger</p>
           <h2>Yun Hyeon Ji<br />Designer</h2>
       </div><!-- .inner end -->
-  </section><!-- .main_visual end -->
+    </div><!-- .main_visual end -->
 
-  <section class="cont01">
+  <section class="cont01" id="c1">
       <div class="inner">
           <div class="title">
               <h3>영상편집</h3>
@@ -99,7 +134,7 @@
                           <img src="img/pc_img.png" alt="pc 모니터" />
                           <div class="youtube">
                               <div>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YRbIewKhHDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                               </div>
                           </div><!-- .youtube end -->
                       </div><!-- .pc_youtube end -->
@@ -124,51 +159,14 @@
                               <li><a href="#">기획서보기</a></li>
                           </ul><!-- .btn end -->
                       </div><!-- .info end -->
-
                   </div><!-- .item end -->
                 </div><!-- 1 -->
-
-                <div class="swiper-slide">
-                  <div class="item">
-                      <!-- 유튜브 -->
-                      <div class="pc_youtube">
-                          <img src="img/pc_img.png" alt="pc 모니터" />
-                          <div class="youtube">
-                              <div>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
-                              </div>
-                          </div><!-- .youtube end -->
-                      </div><!-- .pc_youtube end -->
-
-                      <div class="info">
-                          <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
-                          <h4>영상제목작성하는곳</h4>
-                          <p>컨셉 및 제작목적 눈이 대고, 
-                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
-                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
-                              그들에게 끓는다. 피가 그들의 것이다.보라, 
-                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
-                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
-                          <ul class="text">
-                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
-                              <li><strong>제작일자</strong> : 2022.09</li>
-                          </ul><!-- .text end -->
-                          <ul class="btn">
-                              <li><a href="#">영상원본보기</a></li>
-                              <li><a href="#">기획서보기</a></li>
-                          </ul><!-- .btn end -->
-                      </div><!-- .info end -->
-
-                  </div><!-- .item end -->
-                </div><!-- 2 -->
               </div>
-
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
           </div><!-- .swiper end 1 -->
 
-          <!--motion_menu 홍보영상  -->
           <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -178,7 +176,7 @@
                           <img src="img/pc_img.png" alt="pc 모니터" />
                           <div class="youtube">
                               <div>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YRbIewKhHDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                               </div>
                           </div><!-- .youtube end -->
                       </div><!-- .pc_youtube end -->
@@ -203,10 +201,8 @@
                               <li><a href="#">기획서보기</a></li>
                           </ul><!-- .btn end -->
                       </div><!-- .info end -->
-
                   </div><!-- .item end -->
                 </div><!-- 1 -->
-
                 <div class="swiper-slide">
                   <div class="item">
                       <!-- 유튜브 -->
@@ -239,16 +235,49 @@
                               <li><a href="#">기획서보기</a></li>
                           </ul><!-- .btn end -->
                       </div><!-- .info end -->
-
                   </div><!-- .item end -->
-                </div><!-- 2 -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>홍보영상</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
           </div><!-- .swiper end 2 -->
 
-          <!-- motion_menu 인포그래픽 -->
           <div class="swiper mySwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -258,7 +287,7 @@
                           <img src="img/pc_img.png" alt="pc 모니터" />
                           <div class="youtube">
                               <div>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/YRbIewKhHDs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
                               </div>
                           </div><!-- .youtube end -->
                       </div><!-- .pc_youtube end -->
@@ -283,7 +312,6 @@
                               <li><a href="#">기획서보기</a></li>
                           </ul><!-- .btn end -->
                       </div><!-- .info end -->
-
                   </div><!-- .item end -->
                 </div><!-- 1 -->
                 <div class="swiper-slide">
@@ -301,7 +329,7 @@
                       <div class="info">
                         <div class="a1">
                             <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
-                            <h4>영상제목작성하는곳</h4>
+                            <h4>인포그래픽</h4>
                         </div>
                           <p>컨셉 및 제작목적 눈이 대고, 
                               곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
@@ -318,25 +346,273 @@
                               <li><a href="#">기획서보기</a></li>
                           </ul><!-- .btn end -->
                       </div><!-- .info end -->
-
                   </div><!-- .item end -->
-                </div><!-- 2 -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>인포그래픽</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
               </div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
-          </div><!-- .swiper end 3 -->
+          </div><!-- .swiper end 1 -->
 
+          <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>브이로그</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>게임</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>게임</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+          </div><!-- .swiper end 1 -->
           
+          <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>뮤비티저</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>뮤비티저</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+                <div class="swiper-slide">
+                  <div class="item">
+                      <!-- 유튜브 -->
+                      <div class="pc_youtube">
+                          <img src="img/pc_img.png" alt="pc 모니터" />
+                          <div class="youtube">
+                              <div>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/1VRSko51TEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+                              </div>
+                          </div><!-- .youtube end -->
+                      </div><!-- .pc_youtube end -->
+
+                      <div class="info">
+                        <div class="a1">
+                            <strong>촬영, 출연, 편집, 디자인, 특수효과</strong>
+                            <h4>뮤비티저</h4>
+                        </div>
+                          <p>컨셉 및 제작목적 눈이 대고, 
+                              곧 얼마나 꽃이 그것은 가슴이 풀밭에 부패뿐이다. 
+                              실현에 꽃 하였으며, 하는 것이다. 있으며, 기쁘며, 
+                              그들에게 끓는다. 피가 그들의 것이다.보라, 
+                              인생을 있다. 그림자는 사랑의 아름답고 듣기만 무엇을 
+                              뿐이다. 무한한 찬미를 뛰노는 우리의 사라지지 이것이다.</p>
+                          <ul class="text">
+                              <li><strong>프로그램</strong> : 프리미어프로, 에프터이펙트, 마야, 포토샵, 일러스트레이터</li>
+                              <li><strong>제작일자</strong> : 2022.09</li>
+                          </ul><!-- .text end -->
+                          <ul class="btn">
+                              <li><a href="#">영상원본보기</a></li>
+                              <li><a href="#">기획서보기</a></li>
+                          </ul><!-- .btn end -->
+                      </div><!-- .info end -->
+                  </div><!-- .item end -->
+                </div><!-- 1 -->
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+          </div><!-- .swiper end 1 -->
+
       </div><!-- .inner end -->
   </section><!-- .cont01 end -->
 
-
-
-
-
-    <section class="cont03">
-       <div class="title inner" data-aos="zoom-in-up">
+    <section class="cont03" id="c2">
+       <div class="title inner">
             <h3>웹디자인</h3>
             <p>접근성, 호환성을 고려한 웹사이트 리뉴얼 </p>
        </div> <!-- title end -->
@@ -378,13 +654,14 @@
        </div><!-- list end -->
     </section> <!-- cont03 end -->
 
-    <section class="cont04">
-        <div class="inner">
+
+    <section class="cont04" id="c3">
+        <div class=inner>
             <div class="title">
                 <h3>그래픽 디자인</h3>
                 <p>2D와 3D 그래픽을 포토샵과 일러스트레이터를 이용하여 디자인을 제작했습니다.</p>
             </div><!-- title end -->
-            <div class="list">
+            <div class=list data-aos="zoom-in-up">
                 <a href="img/06.jpg" data-fancybox="images">
                     <img src="img/06.jpg">
                     <div class="info">
@@ -419,12 +696,19 @@
                         <h4>그래픽디자인 제목</h4>
                         <p>사용한 프로그램</p>
                     </div><!-- info end -->
+
+                <a href="img/10.jpg" data-fancybox="images">
+                    <img src="img/10.jpg">
+                    <div class="info">
+                        <h4>그래픽디자인 제목</h4>
+                        <p>사용한 프로그램</p>
+                    </div><!-- info end -->
                 </a>
             </div><!-- list end -->
         </div><!-- inner end -->
     </section><!-- cont04 end -->
 
-    <section class="cont05">
+    <section class="cont05" id="c4">
         <div class="inner">
             <div class="title">
                 <h3>나의 소개</h3>
@@ -483,5 +767,8 @@
         <p>본 사이트는 개인 포토폴리오 사이트로 제작되어 상업적 목적이 아닙니다. 
             <br>사용된 일부 이미지 및 폰트 등은 별도의 풀처가 있음을 밝힙니다.</p>
     </footer>
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
