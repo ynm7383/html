@@ -192,7 +192,9 @@ header.on .inner .gnb ul li a:hover{
 /* .cont01 영상편집 */
 .cont01{
     padding-top: 100px;
+    position: relative;
 }
+
 .cont01 .title{
     text-align: center;
     color: #fff;
@@ -343,6 +345,17 @@ header.on .inner .gnb ul li a:hover{
     border: 1px solid #ccc;
 }
 
+.swiper-button-next{
+    position: absolute;
+    top: 50%;
+    left: 1415px;
+}
+
+.swiper-button-prev{
+    position: absolute;
+    top: 50%;
+    left: -300px;
+}
 
 /* .cont03 웹사이트 */
 .cont03 {
