@@ -1,7 +1,14 @@
 @font-face {
-    font-family: 'SEBANG_Gothic_Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
     font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonoplexKR-Italic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Italic.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
 
@@ -9,7 +16,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'SEBANG_Gothic_Bold';
+    font-family: 'S-CoreDream-3Light';
+    font-weight: 700;
 }
 
 li {
@@ -20,13 +28,14 @@ a {
     color: inherit;
 }
 body {
+    width: 100%;
+    height: 100%;
     color: #333;
     font-family: 'S-CoreDream-3Light';
     background-color: #3c66ae;
 }
 /* common */
 .inner {
-    width: 1440px;
     margin: 0 auto;
 }
 
@@ -40,6 +49,7 @@ section .title {
 section .title h3 {
     font-size: 50px;
     margin-bottom: 15px;
+    font-family: 'MonoplexKR-Italic';
 }
 
 section .title p {
@@ -64,11 +74,12 @@ header.on{
     position: fixed;
     width: 100%;
     margin: 0 auto;
-    z-index: 9; 
+    z-index: 15; 
     color: #333;
 }
 
 header .inner {
+    width: 1440px;
     height: 80px;
     display: flex;
     justify-content: space-between;
@@ -109,53 +120,40 @@ header.on .inner .gnb ul li a:hover{
 
 /* .main_visual */
 .main_visual {
-    height: 100vh;
+    margin: 0 auto;
+    width: 100%;
+    height: 1080px;
     position: relative;
+    overflow: hidden;
 }
 
-.main_visual img{
-    width: 100%;
-    height: 100%;
+.main_visual .inner .img1{
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 30px;
+    left: 261px;
 }
 
-.main_visual .inner {
+.main_visual .inner .img2{
     position: absolute;
-    top: 40%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    height: 300px;
-    width: 700px;
-    background-color: #ef5136;
+    top: 110px;
+    left: 900px;
+    z-index: 9;
 }
 
-.main_visual .inner p {
-    color: rgba(255, 255, 255, 0.594);
-    font-size: 25px;
-    margin-top: 30px;
-    padding-left: 20px;
+.main_visual .inner .img3{
+    position: absolute;
+    top: -30px;
+    left: 850px;
 }
 
-.main_visual .inner h2 {
-    font-size: 70px;
-    color: #fff;
-    padding: 10px;
-    letter-spacing:10px;
-    line-height: 1.4;
-    padding-left: 20px;
-}
+/* .cont02 .swiper */
 
-/* .swiper */
-.swiper {
-    width: 100%;
-    height: 100%;
+.cont02 .swiper{
+    position: static;
 }
-.swiper-slide {
+.cont02 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -171,41 +169,89 @@ header.on .inner .gnb ul li a:hover{
     -webkit-align-items: center;
     align-items: center;
 }
-.swiper-slide img {
+.cont02 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.swiper .swiper-button-next{
+.cont02 .swiper .swiper-button-next{
     position: absolute;
     color: #fdbc02;
 }
-.swiper .swiper-button-prev{
+.cont02 .swiper .swiper-button-prev{
     position: absolute;
    margin-left: 300px;
    color: #fdbc02;
 }
 
-
-/* .cont01 영상편집 */
+/* cont01 평점 */
 .cont01{
-    padding-top: 100px;
+    width: 1440px;
+    margin: 0 auto;
+    padding-top: 150px;
+}
+
+.cont01 h2{
+    margin: 0 auto;
+    line-height: 65px;
+    width: 262px;
+    height: 65px;
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 100px;
+}
+
+.cont01 .list .item{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.cont01 .list .item img{
+    margin-right: 5px;
+}
+
+.cont01 .list .item h3{
+    width: 190px;
+    height: 45px;
+    line-height: 35px;
+    border: 3px solid #fff;
+    text-align: center;
+    margin: 0 22px;
+}
+
+.cont01 .list:nth-last-of-type(1){
+    margin-left: 548px;
+    margin-top: 71px;
+}
+
+/* .cont02 영상편집 */
+.cont02{
+    width: 1440px;
+    margin: 0 auto;
+    margin-top: 200px;
+    padding-top: 150px;
+}
+
+.cont02 .inner{
     position: relative;
 }
 
-.cont01 .title{
+.cont02 .title{
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
 }
 
-.cont01 .motion_menu {
+.cont02 .motion_menu {
     display: inline-block;
 }
 
-.cont01 .motion_menu ul {
+.cont02 .motion_menu ul {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
@@ -214,7 +260,7 @@ header.on .inner .gnb ul li a:hover{
     height: 40px;
 }
 
-.cont01 .motion_menu ul li {
+.cont02 .motion_menu ul li {
     padding: 0 30px;
     font-size: 14px;
     font-weight: 500;
@@ -225,44 +271,43 @@ header.on .inner .gnb ul li a:hover{
 }
     
 
-.cont01 .motion_menu ul li.on {
+.cont02 .motion_menu ul li.on {
     line-height: 45px;
     background-color: #fff;
     color: #333;
 }
 
-.cont01 .mySwiper {display: none;}
-.cont01 .mySwiper.on {display: block;}
+.cont02 .mySwiper {display: none;}
+.cont02 .mySwiper.on {display: block;}
 
-.cont01 .mySwiper .item {
+.cont02 .mySwiper .item {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:flex-end;
     background-color: #3c66ae;
 }
 
-.cont01 .mySwiper .item .pc_youtube {
+.cont02 .mySwiper .item .pc_youtube {
     width: 55%;
     position: relative;
 }
 
-.cont01 .mySwiper .item .pc_youtube img {
+.cont02 .mySwiper .item .pc_youtube img {
     height: auto;
 }
-.cont01 .mySwiper .item .pc_youtube .youtube {
+.cont02 .mySwiper .item .pc_youtube .youtube {
     position: absolute;
-    top: 23px;
-    left: 26px;
-    width: 94%;
+    top: 47px;
+    left: 15px;
+    width: 96%;
 }
 
-.cont01 .mySwiper .item .pc_youtube .youtube > div {
+.cont02 .mySwiper .item .pc_youtube .youtube > div {
     width: 100%;
     padding-bottom: 56.25%;
-    position: relative;
 }
 
-.cont01 .mySwiper .item .pc_youtube .youtube > div iframe{
+.cont02 .mySwiper .item .pc_youtube .youtube > div iframe{
     width: 100%;
     height: 100%;
     position:absolute;
@@ -270,38 +315,37 @@ header.on .inner .gnb ul li a:hover{
     left: 0;
 }
 
-.cont01 .mySwiper .item .info{
-    width: 40%;
+.cont02 .mySwiper .item .info{
+    width: 45%;
     text-align: left;
     border: 3px solid #fff;
     background-color: #fff;
     margin-left: 20px;
 }
 
-.swiper-pagination{
-    
+.cont02 .swiper-pagination{
     color: #fff;
 }
 
-.cont01 .mySwiper .item .info .a1{
+.cont02 .mySwiper .item .info .a1{
     background-color: #3c66ae;
     color: #fff;
     text-align: center;
     padding: 20px;
 }
 
-.cont01 .mySwiper .item .info .a1 strong{
+.cont02 .mySwiper .item .info .a1 strong{
     display: block;
     margin-bottom: 10px;
     font-size: 18px;
 }
 
-.cont01 .mySwiper .item .info .a1 h4{
+.cont02 .mySwiper .item .info .a1 h4{
     font-size: 30px;
     text-align: center;
 }
 
-.cont01 .mySwiper .item .info p{
+.cont02 .mySwiper .item .info p{
     font-size: 18px;
     margin-top: 20px;
     padding-top: 10px;
@@ -311,22 +355,22 @@ header.on .inner .gnb ul li a:hover{
     text-align: center;
 }
 
-.cont01 .mySwiper .item .info .text{
+.cont02 .mySwiper .item .info .text{
     margin: 20px 0 15px;
     text-align: center;
 }
 
-.cont01 .mySwiper .item .info .text li{
+.cont02 .mySwiper .item .info .text li{
     line-height: 1.6;
 }
 
-.cont01 .mySwiper .item .info .btn{
+.cont02 .mySwiper .item .info .btn{
     padding-left: 155px;
     display: flex;
     margin-bottom: 10px;
 }
 
-.cont01 .mySwiper .item .info .btn  li{
+.cont02 .mySwiper .item .info .btn  li{
     height: 40px;
     line-height: 45px;
     border-radius: 10px;
@@ -335,26 +379,31 @@ header.on .inner .gnb ul li a:hover{
     margin-right: 10px;
 }
 
-.cont01 .mySwiper .item .info .btn li a{
+.cont02 .mySwiper .item .info .btn li a{
     padding: 0 25px;
 }
 
-.cont01 .mySwiper .item .info .btn li:nth-of-type(2){
+.cont02 .mySwiper .item .info .btn li:nth-of-type(2){
     background-color: #fff;
     color: #333;
     border: 1px solid #ccc;
 }
 
-.swiper-button-next{
+.cont02 .swiper-button-next{
     position: absolute;
-    top: 50%;
-    left: 1415px;
+    top: 400px;
+    left: 1500px;
 }
 
-.swiper-button-prev{
+.cont02 .swiper-button-prev{
     position: absolute;
-    top: 50%;
-    left: -300px;
+    top: 400px;
+    left: -360px;
+}
+
+.cont02 .swiper-pagination{
+    position: absolute;
+    bottom: -40px;
 }
 
 /* .cont03 웹사이트 */
@@ -468,114 +517,100 @@ header.on .inner .gnb ul li a:hover{
 
 /* 그래픽디자인 */
 .cont04{
+    width: 1440px;
     margin: 0 auto;
     margin-top: 150px;
-    color: #fff;
-    padding: 80px;
+    padding-top: 150px;
+}
+
+.cont04 .inner{
+    position: relative;
 }
 
 .cpnt04 .title{
     text-align: center;
 }
 
-.cont04 .list{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cont04 .list a{
-    width: 28%;
+.cont04 .inner .graphicswiper .swiper-wrapper .swiper-slide a{
+    width: 397px;
+    height: 480px;
     margin: 15px;
 }
 
-.cont04 .list a img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: block;
-}
-.cont04 .list a .info{
-    background-color: #eee;
-    color: #333;
-    padding: 20px 10px;
-}
-
-.cont04 .list a .info h4{
-    font-size: 20px;
-    margin-bottom: 7px;
-}
-
-
-
-
-/* cont05 나의 소개 */
-
-.cont05{
-    padding:200px 0 150px;
-    margin-bottom: 150px;
-}
-
-.cont05 .info{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cont05 .info_img{
-    width: 400px;
-    height: 400px;
-}
-
-.cont05 .info_img img{
+.cont04 .inner .graphicswiper .swiper-wrapper .swiper-slide a img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
-.cont05 .info .text{
-    width: 1000px;
-    padding-left: 100px;
+.cont04 .inner .graphicswiper .swiper-wrapper .swiper-slide a .info{
+    position: absolute;
+    top: 800px;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.522);
     color: #fff;
-font-weight: 500;
-}
-.cont05 .info .text ul{
-    display: flex;
-    flex-wrap: wrap;
+    padding-top: 220px;
     font-size: 20px;
-    margin-bottom: 20px;
+    font-weight: 500;
+}
+.cont04 .inner .graphicswiper .swiper-wrapper .swiper-slide a:hover .info{
+    position: absolute;
+    top: 25px;
 }
 
-.cont05 .info .text ul li{
-    line-height: 1.4;
-}
+.cont04 .swiper {
+    width: 100%;
+    height: 100%;
+    position: static;
+  }
 
-.cont05 .info .text ul li strong{
-    display: inline-block;
-    width: 180px;
-}
+  .cont04 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
 
-.cont05 .info .text .list{
-    margin-top: 50px;
-    color: #333;
-}
+    /* Center slide text vertically */
+    /* display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; */
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
 
-.cont05 .info .text .list li{
-    height: 50px;
-    line-height: 55px;
-    padding: 0 30px;
-    background-color: #eee;
-    border-radius: 40px;
-    margin: 5px 10px;
-    font-weight: 700;
-}
-.cont05 .info .text .list li.v{
-    background-color: #ef5136;
-    color: #333;
-}
+    height: 480px;
+  }
+
+  .cont04 .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cont04 .swiper .swiper-pagination{
+    position: absolute;
+    top: 650px;
+    left: 0;
+  }
+
+  .cont04 .swiper-pagination-bullet{
+    background-color:#fdba02;
+  }
+
 
 /* footer */
 footer{
+    margin-top: 150px;
     padding: 70px 0;
     background-color: #333;
     color: #fff;
@@ -586,13 +621,16 @@ footer ul {
 }
 
 footer ul li{
-    height: 50px;
-    
+    height: 50px;  
     width: 200px;
     background-color: #fdbc02;
     margin: 10px auto;
     border-radius: 40px;
     color: #333;
+}
+
+footer ul li:hover{
+    background-color: #ef5136;
 }
 
 footer ul li a{
