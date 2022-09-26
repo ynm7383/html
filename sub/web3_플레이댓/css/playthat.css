@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @font-face {
-    font-family: 'HallymGothic-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-family: 'MonoplexKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Regular.woff2') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'HallymGothic-Regular';
+    font-family: 'MonoplexKR-Regular';
 }
 
 body{
@@ -51,7 +51,7 @@ header{
     justify-content: space-between;
     align-items: center;
     color: #fff;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 header .left{
@@ -83,11 +83,11 @@ header .right li{
 }
 
 .main_v .title h2{
-    font-size: 70px;
+    font-size: 65px;
     color: #fffaac;
     font-family: 400;
     line-height: 1.1;
-    letter-spacing: 15px;
+    letter-spacing: 13px;
 }
 
 .main_v .title .down{
@@ -103,8 +103,8 @@ header .right li{
 /* cont01 */
 
 .cont01{
-    width: 1400px;
-    margin: 150px auto;
+    width: 1440px;
+    margin: 280px auto;
 }
 
 .cont01 .list01{
@@ -115,11 +115,54 @@ header .right li{
 .cont01 .list01 .info{
     text-align: right;
 }
-
+.cont01 .list01 .info h4{
+    font-size: 28px;
+}
 .cont01 .list02{
     margin-top: 200px;
     display: flex;
     justify-content: space-between;
+}
+
+.cont01 .list01 .info p{
+    position: relative;
+    color: #fff;
+    margin-bottom: 45px;
+    line-height: 1.4;
+}
+
+.cont01 .list01 .info p::before{
+    content: '';
+    width: 810px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 8px;
+    border-bottom: 2px solid #fff;
+    top:55px;
+    left: -105px;
+}
+
+
+.cont01 .list02 .info p{
+    position: relative;
+    color: #fff;
+    margin-bottom: 45px;
+    line-height: 1.4;
+}
+
+.cont01 .list02 .info h4{
+    font-size: 25px;
+}
+
+.cont01 .list02 .info p::before{
+    content: '';
+    width: 810px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 8px;
+    border-bottom: 2px solid #fff;
+    top:55px;
+    left: 0;
 }
 
 
@@ -157,13 +200,24 @@ header .right li{
 /* cont03 */
 .cont03{
     width: 1440px;
-    margin: 150px auto;
+    margin: 200px auto;
 }
 
 .cont03 .title{
     text-align: center;
+    color: #333;
+    margin-bottom: 87px;
+}
+
+.cont03 .title h2{
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+.cont03 .title h4{
+    font-size: 28px;
     color: #fff;
-    margin-bottom: 88px;
+    font-weight: 500;
 }
 
 .cont03 .list{
@@ -176,6 +230,8 @@ header .right li{
     position: relative;
 }
 
+
+
 .cont03 .list .item .img{
     display: block;
     width: 100%;
@@ -185,7 +241,7 @@ header .right li{
 
 .cont03 .list .item .info{
     position: absolute;
-    width: 338.59px;
+    width: 339px;
     height: 433px;
     background-color: rgba(51, 51, 51, 0.429);
     color: #fff;

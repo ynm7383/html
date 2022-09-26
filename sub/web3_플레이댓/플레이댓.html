@@ -6,8 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>playthat</title>
 </head>
+<!-- css -->
+<!-- fullpage -->
+<link href="lib/fullPage.js-master/dist/fullpage.css" rel="stylesheet"/>
+<!-- aos -->
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
 <link href="css/playthat.css" rel="stylesheet">
+
+
+<!-- js -->
+<!-- jquery js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- aos -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
 <body>
+    <script>
+        AOS.init();
+      </script>
+    <script src="lib/fullPage.js-master/dist/fullpage.min.js"></script>
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            anchors: ['firstPage', 'secondPage', 'last_page'],
+            // sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+            navigation: true,
+            navigationPosition: 'right',
+            navigationTooltips: ['1', '2', 'end']
+        });
+    </script>
+
+
     <header>
         <h1><img src="img/logo.png"></h1>
         <ul class="left">
@@ -23,7 +53,8 @@
         </ul>
     </header>
 
-    <section class="main_v">
+<div class="fullpage">
+    <section class="main_v" id="section0">
         <div class="title">
             <h2>식물을<br>즐기는<br>라이프스타일</h2>
             <div class="down">
@@ -38,9 +69,9 @@
     </section>
     <!-- main_v end -->
     
-    <section class="cont01">
-        <div class="list01">
-            <img src="img/plan_1.png">
+    <section class="cont01" id="section2">
+        <div class=list01 data-aos="fade-up" date-aos-easing="200">
+            <img src="img/plan_1.png" data-fancybox="images">
             <div class="info">
                 <p>물 주기만 1시간...업무는 언제?<br>열심히 물을 주지만 식물은 왜 힘이 없지?</p>
                 <h2>사무실<br>식물관리서비스</h2>
@@ -49,7 +80,7 @@
             </div><!-- info end -->
         </div>
 
-        <div class="list02">
+        <div class=list02 data-aos="fade-up">
             <div class="info">
                 <p>직접 들고 찾아가기엔 힘도 시간도 빠듯하고..<br>괜찮은 방법은 없을까?</p>
                 <h2>출장<br>분갈이서비스</h2>
@@ -58,12 +89,12 @@
                     화분의 크기가 작아 더 큰 화분으로 옮기고 싶을 때<br>
                     우리 집 식물이 이유도 모르고 시들어 갈 때</h4>
             </div><!-- info end -->
-            <img src="img/plan_2.png">
+            <img src="img/plan_2.png" data-fancybox="images">
         </div>
     </section><!-- cont01 end -->
 
 
-    <section class="cont02">
+    <section class="cont02" id="section2">
         <img src="img/back1.png">
         <div class="info">
             <h3>플레이댓</h3>
@@ -73,7 +104,7 @@
         </div>
     </section><!-- cont02 end -->
 
-    <section class="cont03">
+    <section class="cont03" id="section3">
         <div class="title">
             <h2>비즈니스</h2>
             <h4>당신의 식물이 건강하게 자랄 수 있도록.<br>
@@ -114,7 +145,7 @@
             <!-- item end04 -->
         </div>
     </section> <!-- cont03 end -->
-   
+</div>   
     <footer>
         <div class="up">
             <p>
